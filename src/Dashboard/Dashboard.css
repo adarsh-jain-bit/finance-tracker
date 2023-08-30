@@ -1,0 +1,30 @@
+/* navbar css */
+.search_input{
+    width: 300px;
+}
+/* sidebar css */
+.nav-link{
+    color: white;
+}
+
+.nav-link:focus, .nav-link:hover{
+    color: black;
+}
+
+/* dashboard */
+.bg-color{
+background-color: rgb(241, 238, 238);
+}
+/* tspan{
+    font-weight: 200;
+    font-size: 10px;
+} */
+/* .addbutton{
+    position: fixed;
+   top: 25px;
+    right: 80px;
+} */
+/* Transaction */
+.no-image{
+filter: contrast(0.9);
+}

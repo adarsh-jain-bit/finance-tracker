@@ -1,0 +1,88 @@
+import React from 'react'
+import { ResponsiveContainer,LineChart,Line,XAxis,YAxis,Tooltip,CartesianGrid ,Legend} from 'recharts'
+import { useContext ,useState} from 'react'
+import userContext from '../context/ContextCreate';
+const IncomeChart = () => {
+    const {data} = useContext(userContext)
+    const monthly = [
+      
+        {
+        Xindex : "jan",
+        Yindex : "10000",
+        income : "10000",
+        expense : "8000",
+        saving : data.Transaction.saving
+        },
+        {
+            Xindex : "Mar",
+            Yindex : "10000",
+            income : "10000",
+            expense : "5000",
+            saving :  data.Transaction.saving
+          
+        },
+        {
+            Xindex : "May",
+            Yindex : "10000",
+            income : "10000",
+             expense : "7000",
+            saving : data.Transaction.saving
+        },
+        {
+            Xindex : "July",
+            Yindex : "10000",
+            income : "10000",
+        expense : "9000",
+            saving :  data.Transaction.saving
+        },
+        {
+            Xindex : "sep",
+            Yindex : "10000",
+            income : "10000",
+        expense : "2000",
+            saving :  data.Transaction.saving
+        },
+        {
+            Xindex : "dec",
+            Yindex : "10000",
+            income : "10000",
+        expense : "5000",
+            saving :  data.Transaction.saving
+        }
+      ]
+         //   let selectedData ;
+    //   switch (data.Term) {
+    //     case "weekly" :
+    //       selectedData = weekly;
+    //       break;
+    //     case "monthly":
+    //       selectedData = monthly;
+    //       break;
+    //     case "yearly":
+    //       selectedData = yearly;
+    //       break;
+    //     default:
+    //       selectedData = data.Term.toString();
+    //   }
+  return (
+    <>
+    <h4 className='text-center text-primary'>Annual Saving(in Thousand)</h4>
+   <div className='bg-white p-3 rounded-2 mt-4'>
+   <ResponsiveContainer width="100%" aspect={3} >
+        <LineChart data={monthly}>
+    <CartesianGrid strokeDasharray="3 3"/>
+    <Legend  />
+            <XAxis dataKey="Xindex" interval={"preserveStartEnd"}/>
+            <YAxis dataKey="Yindex" interval={"preserveStartEnd"}/>
+            <Tooltip />
+  <Line type="monotone" dataKey="saving" />
+         </LineChart>
+    </ResponsiveContainer>  
+   </div>
+    </>
+  )
+}
+
+export default IncomeChart
+
+
